@@ -61,6 +61,7 @@ body {
     padding: 3rem 5rem 4rem 5rem;
     background-color: var(--color-dark--1);
     color: var(--color-light--2);
+    position: relative;
 }
 
 .form {
@@ -182,4 +183,23 @@ body {
 
 .cycling-popup .leaflet-popup-content-wrapper {
     border-left: 4px solid var(--color-brand--1);
+}
+
+/* delete button */
+.del-btn--box {
+    position: absolute;
+    bottom: 15%;
+    right: 1rem;
+    text-align: center;
+}
+
+.del-btn {
+    max-width: 3.2rem;
+    padding: 0.2rem;
+    border-radius: 5px;
+    background-color: inherit;
+    color: #c92a2a;
+    font-size: 1.8rem;
+    font-weight: 600;
+    cursor: pointer;
 }

@@ -10,6 +10,7 @@ const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
+const delBtn = document.querySelector('.del-btn');
 let map, mapEvent;
 
 class Workout {
@@ -253,6 +254,17 @@ class App {
       this.#renderWorkoutMarker(workout);
     });
   }
+  deleteWorkouts() {
+    this.#workouts.splice(0, this.#workouts.length);
+    localStorage.removeItem('workouts');
+    this.#workouts.forEach(workout => {
+      this.#renderWorkoutTile(workout);
+      this.#renderWorkoutMarker(workout);
+    });
+    location.reload();
+  }
 }
 
 const app = new App();
+
+delBtn.addEventListener('click', app.deleteWorkouts.bind(app));
